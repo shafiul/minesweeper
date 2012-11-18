@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <script src="scripts/jquery.js" ></script>
+        <script src="scripts/jquery.stopwatch.js" ></script>
 
 
         <link rel="stylesheet" href="style/style.css" type="text/css" />
@@ -16,9 +17,14 @@
         </div>
 
         <br />
-        <div id="flagStatus">
-            <input id="newGameBtn" value="Start New" type="button" /> 
-            Flag Used: <span id="flagUsed">0</span> of <span id="flagAvailable"></span>
+        <div id="dashboard" class="blocked">
+            <input id="newGameBtn" value="Start New" type="button" />
+            <span id="flag">
+                <span id="flagUsed">0</span> of <span id="flagAvailable"></span>
+            </span> 
+            <div class="">
+                <div id="clock" ></div>
+            </div>
         </div>
         <br />
         <div id="status">

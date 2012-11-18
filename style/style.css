@@ -2,8 +2,12 @@ root {
     display: block;
 }
 
+div{
+    display:inline-block;
+}
 
 .cell{
+    display:block;
     float:left;
     border: 1px solid black;
     
@@ -34,6 +38,7 @@ root {
 
 .rowbreak{
     clear: both;
+    display: block;
 }
 
 #map-wrapper{
@@ -41,4 +46,7 @@ root {
     text-align: center;
 }
 
+.blocked{
+    display:block;
+}
 

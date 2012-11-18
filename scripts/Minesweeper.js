@@ -185,8 +185,7 @@ Minesweeper.prototype.handleNormalClick = function(r, c){
     if( this.cells[r][c] == this.CELLVAL_MINE ){
         this.updateStatus("Bomb click on " + r + c);
         // Mine clicked! Finish Game
-        this.isGameValid = false;
-        this.printAll();
+        this.stopGame(false);
     }else if( this.cells[r][c] == 0 ){
         // Empty field clicked
         this.updateStatus("Empty Cell click on " + r + c);
@@ -203,9 +202,8 @@ Minesweeper.prototype.handleNormalClick = function(r, c){
     }
     console.log('Required clicks', this.requiredClicks);
     // Check if won?
-    if( ! this.requiredClicks ){
-        this.isGameValid = false;
-        alert('You won!');
+    if( this.requiredClicks == 0 ){
+        this.stopGame(true);
     }
 }
 
@@ -281,6 +279,26 @@ Minesweeper.prototype.handleSpecialClick = function(r, c){
     }
     // Update Status
     $('#flagUsed').html(this.flagCounter);
+}
+
+
+/**
+ * Take actions to stop the game
+ */
+Minesweeper.prototype.stopGame = function(isWinner){
+    isWinner = (typeof isWinner === 'undefined')?(true):(isWinner);
+    // Stop the timer
+    $('#clock').find('.stop').click();
+    this.isGameValid = false;
+    if(isWinner){
+        var h = $('#clock').find('.hr').text();
+        var m = $('#clock').find('.min').text();
+        var s = $('#clock').find('.sec').text();
+        alert('You won! Time required: ' + h + ":" + m + ":" + s);
+    }else{
+        alert('Kaboooom!!!');
+        this.printAll();
+    }
 }
 
 /**
