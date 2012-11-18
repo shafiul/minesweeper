@@ -12,7 +12,7 @@ function Minesweeper(numCellInRow){
     this.isCellVisited = new Array(this.numCellInRow);
     // Others
     this.numCell = this.numCellInRow * this.numCellInRow;
-    this.numMines = Math.floor(this.numCell * (2.5/16));
+    this.numMines = Math.ceil(this.numCell * (2.5/16));
     this.flagCounter = 0;
     this.requiredClicks = this.numCell - this.numMines;
     console.log('Required clicks: ' + this.requiredClicks);

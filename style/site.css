@@ -1,0 +1,40 @@
+/* 
+    Document   : site
+    Created on : Nov 18, 2012, 5:59:20 PM
+    Author     : shantanu
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    text-align: center;
+}
+
+div{
+    display: inline-block;
+}
+
+.body-wrapper{
+    text-align: center;
+    margin: auto;
+}
+
+#header{
+    float:left;
+}
+
+#selector div{
+    float:left;
+    width:auto;
+    height:auto;
+}
+
+#selector div input{
+    height: 60px;
+    width: 60px;
+    font-weight: bold;
+}

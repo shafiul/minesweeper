@@ -5,12 +5,31 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Minesweeper - The Open Web HTML5 Game!</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style/site.css" type="text/css" />
     </head>
     <body>
-        <div>
-            <h1>Welcome to Minesweeper - The Open Web HTML5 Game!</h1>
+        <div class="body-wrapper">
+            <div id="header">
+                <img src="style/img/Bomb.png" />
+            </div>
+            
+            <div id="selector">
+                <div>
+                    <input onclick="window.location = 'play.html?4';" type="button" value="4 X 4" >
+                </div>
+                <div>
+                    <input onclick="window.location = 'play.html?8';" type="button" value="8 X 8" >
+                </div>
+                <div style="clear: both;"></div>
+                <div>
+                    <input onclick="window.location = 'play.html?16';" type="button" value="16 X 16" >
+                </div>
+                <div>
+                    <input onclick="window.location = 'play.html?32';" type="button" value="32 X 32" >
+                </div>
+            </div>
         </div>
     </body>
 </html>
