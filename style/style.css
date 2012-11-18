@@ -1,0 +1,44 @@
+root { 
+    display: block;
+}
+
+
+.cell{
+    float:left;
+    border: 1px solid black;
+    
+    width: 24px;
+    height:24px;
+    cursor: pointer;
+}
+
+.cellYellow{
+    background-color: yellow;
+}
+
+.cellRed{
+    background-color: red;
+}
+
+.cellGray{
+    background-color: gray;
+}
+
+.cellBlue{
+    background-color: blue;
+}
+
+.cellYellow:hover{
+    background-color: #F7BE81;
+}
+
+.rowbreak{
+    clear: both;
+}
+
+#map-wrapper{
+    margin: auto;
+    text-align: center;
+}
+
+

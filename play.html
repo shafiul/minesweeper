@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minesweeper</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script src="scripts/jquery.js" ></script>
+
+
+        <link rel="stylesheet" href="style/style.css" type="text/css" />
+
+    </head>
+    <body>
+        <div id="map-wrapper">
+            <div id="map"></div>
+        </div>
+
+        <br />
+        <div id="flagStatus">
+            <input id="newGameBtn" value="Start New" type="button" /> 
+            Flag Used: <span id="flagUsed">0</span> of <span id="flagAvailable"></span>
+        </div>
+        <br />
+        <div id="status">
+            Idle
+        </div>
+
+
+        <!--    Scripts     -->
+        <script src="scripts/Minesweeper.js" ></script>
+        <script src="scripts/play.js" ></script>
+    </body>
+</html>
