@@ -134,11 +134,27 @@ Minesweeper.prototype._resoluteRowCol = function(index){
 
 Minesweeper.prototype._generateHTML = function(){
     var htmlStr = "";
-    
+    // place Horizontal Aisle
+    for(j=0; j < this.numCellInRow; j++){
+        htmlStr += "<div class='aisle horAisle'>&nbsp;</div>";
+    }
+    // Fill up extra space
+    htmlStr += "<div class='aisle horAisleFiller'>&nbsp;</div>";
+    htmlStr += "<div class='rowbreak'></div>";
+    // Create Mine Cells
     for(var i=0; i < this.numCellInRow; i++){
+        htmlStr += "<div class='aisle verAisle'>&nbsp;</div>";
         for(var j=0; j < this.numCellInRow; j++){
             htmlStr += "<div class = 'cell cellYellow' id = '" + i + this.rcJoiner + j + "'>&nbsp;</div>";
+            htmlStr += "<div class='aisle verAisle'>&nbsp;</div>";
         }
+        htmlStr += "<div class='rowbreak'></div>";
+        // place Horizontal Aisle
+        for(j=0; j < this.numCellInRow; j++){
+            htmlStr += "<div class='aisle horAisle'>&nbsp;</div>";
+        }
+        // Fill up extra space
+        htmlStr += "<div class='aisle horAisleFiller'>&nbsp;</div>";
         htmlStr += "<div class='rowbreak'></div>";
     }
     // inject HTML
@@ -192,7 +208,7 @@ Minesweeper.prototype.handleNormalClick = function(r, c){
         this.emptyCellClicked(r, c);
     }else{
         // Normal, just reveal itself.
-//        this.updateStatus("Normal on " + r + c);
+        //        this.updateStatus("Normal on " + r + c);
         if( ! this.isCellVisited[r][c] ){
             this.isCellVisited[r][c] = true;
             this.requiredClicks--;
@@ -246,7 +262,7 @@ Minesweeper.prototype.emptyCellClicked = function(r, c){
         
     }else if( this.cells[r][c] != 0 ){
         // Normal cell, just reveal itself...
-//        console.log("Normal found on " + r + c);
+        //        console.log("Normal found on " + r + c);
         // Reveal cell if not visited already
         if(! this.isCellVisited[r][c] ){
             this.isCellVisited[r][c] = true;

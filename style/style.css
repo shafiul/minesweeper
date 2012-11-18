@@ -1,5 +1,13 @@
+@variables cellVar{
+    side: 24px;
+}
+
 root { 
     display: block;
+}
+
+body{
+    text-align: center;
 }
 
 div{
@@ -9,23 +17,44 @@ div{
 .cell{
     display:block;
     float:left;
-    border: 1px solid black;
-    
+    border: 0;
     width: 24px;
     height:24px;
     cursor: pointer;
+    color: black;
+    font-size: 20px;
+}
+
+.aisle{
+    float:left;
+    background: url("img/clay.jpg") repeat;
+}
+
+.verAisle{
+    height: 24px;
+    width: 5px;
+}
+
+.horAisle{
+    height: 5px;
+    width: 29px;
+}
+
+.horAisleFiller{
+    height: 5px;
+    width: 5px;
 }
 
 .cellYellow{
-    background-color: yellow;
+    background: url("img/grass.jpg") repeat;
 }
 
 .cellRed{
-    background-color: red;
+    background: url("img/bomb.jpg") repeat;
 }
 
 .cellGray{
-    background-color: gray;
+    background: url("img/empty.jpg") repeat;
 }
 
 .cellBlue{
@@ -48,5 +77,9 @@ div{
 
 .blocked{
     display:block;
+}
+
+#dashboard{
+    margin-top: 10px;
 }
 
