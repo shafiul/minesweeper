@@ -198,17 +198,23 @@ Minesweeper.prototype.start = function(){
  */
 
 Minesweeper.prototype.handleNormalClick = function(r, c){
+    // Should not be able to click on a flagged cell
+    if( this.isFlagged[r][c] ){
+        return;
+    }
     if( this.cells[r][c] == this.CELLVAL_MINE ){
         this.updateStatus("Bomb click on " + r + c);
         // Mine clicked! Finish Game
         this.stopGame(false);
     }else if( this.cells[r][c] == 0 ){
         // Empty field clicked
-        this.updateStatus("Empty Cell click on " + r + c);
+//        this.updateStatus("Empty Cell click on " + r + c);
         this.emptyCellClicked(r, c);
     }else{
         // Normal, just reveal itself.
         //        this.updateStatus("Normal on " + r + c);
+        
+        // Make this cell visited to avoid user cheating clicking on the same cell
         if( ! this.isCellVisited[r][c] ){
             this.isCellVisited[r][c] = true;
             this.requiredClicks--;
@@ -278,7 +284,7 @@ Minesweeper.prototype.emptyCellClicked = function(r, c){
 
 Minesweeper.prototype.handleSpecialClick = function(r, c){
     // ignore flag in whitespace
-    if( this.cells[r][c] == 0 ){
+    if( this.isCellVisited[r][c] ){
         return;
     }
     if( this.isFlagged[r][c] ){
