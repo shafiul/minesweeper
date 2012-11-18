@@ -23,6 +23,7 @@ div{
     cursor: pointer;
     color: black;
     font-size: 20px;
+    text-shadow: yellow 0.1em 0.1em 0.2em;
 }
 
 .aisle{
@@ -58,7 +59,7 @@ div{
 }
 
 .cellBlue{
-    background-color: blue;
+    background: url("img/flag.jpg") repeat;
 }
 
 .cellYellow:hover{
@@ -80,6 +81,27 @@ div{
 }
 
 #dashboard{
-    margin-top: 10px;
+    margin-top: 30px;
+    display: inline-block;
+    background: url("img/board.jpg") repeat;
+    padding: 20px;
+    color: #F7D358;
 }
 
+#clock{
+    color: #80FF00;
+    font-size: 12px;
+    font-style: italic;
+    
+}
+
+#status{
+    margin: 10px auto auto auto;
+    font-size: 10px;
+    
+}
+
+#flag{
+    font-size: 10px;
+    margin: auto 10px auto 10px;
+}

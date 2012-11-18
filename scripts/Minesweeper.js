@@ -12,7 +12,7 @@ function Minesweeper(numCellInRow){
     this.isCellVisited = new Array(this.numCellInRow);
     // Others
     this.numCell = this.numCellInRow * this.numCellInRow;
-    this.numMines = Math.floor(this.numCell * (3/16));
+    this.numMines = Math.floor(this.numCell * (2.5/16));
     this.flagCounter = 0;
     this.requiredClicks = this.numCell - this.numMines;
     console.log('Required clicks: ' + this.requiredClicks);
@@ -277,6 +277,10 @@ Minesweeper.prototype.emptyCellClicked = function(r, c){
  */
 
 Minesweeper.prototype.handleSpecialClick = function(r, c){
+    // ignore flag in whitespace
+    if( this.cells[r][c] == 0 ){
+        return;
+    }
     if( this.isFlagged[r][c] ){
         // Unflag...
         this.isFlagged[r][c] = false;
@@ -312,7 +316,6 @@ Minesweeper.prototype.stopGame = function(isWinner){
         var s = $('#clock').find('.sec').text();
         alert('You won! Time required: ' + h + ":" + m + ":" + s);
     }else{
-        alert('Kaboooom!!!');
         this.printAll();
     }
 }
