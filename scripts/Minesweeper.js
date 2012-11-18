@@ -62,6 +62,15 @@ Minesweeper.prototype._init = function(){
     
     // Update some UI 
     $('#flagAvailable').html( this.numMines );
+    
+    // Preload some images
+    var imgArr = ['flag.jpg', 'empty.jpg', 'bomb.jpg'];
+    var imgBase = 'style/img/';
+    var imgObArr = new Array();
+    for(i=0; i<imgArr.length; i++ ){
+        imgObArr[i] = new Image();
+        imgObArr[i].src = imgBase + imgArr[i];
+    }
 }
 
 /**
