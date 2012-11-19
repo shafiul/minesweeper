@@ -17,9 +17,9 @@ function createNewGame(query){
     gameOb.start();
     //gameOb.updateStatus("Mines: " + gameOb.numMines);
 
-    // BIND EVENTS
+    // BIND EVENTS /////////////////////////////////
 
-    // click event on a cell
+    // Bind single & Right clicks event on a cell
     $('.cell').mousedown(function(event){
         // Return if game over
         if( !gameOb.isGameValid ){
@@ -42,6 +42,13 @@ function createNewGame(query){
                 break;
         }
     
+    });
+    
+    // Double-click binding
+    
+    $('.cell').dblclick(function(event){
+        alert('Double click available!');
+        event.preventDefault();
     });
 
     // Disable right click
@@ -66,4 +73,4 @@ $('#newGameBtn').click(function(){
 
 
 // Auto-start a new game
-$('#newGameBtn').click();
+createNewGame(query);

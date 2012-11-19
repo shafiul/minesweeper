@@ -231,7 +231,7 @@ Minesweeper.prototype.handleNormalClick = function(r, c){
         
         $('#' + r + this.rcJoiner + c).html( this.cells[r][c] );
     }
-    console.log('Required clicks', this.requiredClicks);
+//    console.log('Required clicks', this.requiredClicks);
     // Check if won?
     if( this.requiredClicks == 0 ){
         this.stopGame(true);
